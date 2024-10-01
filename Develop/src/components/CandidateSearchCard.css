@@ -1,0 +1,74 @@
+.candidate-card {
+    background-color: #ffffff; /* White background for the card */
+    border: 1px solid #e1e1e1; /* Light gray border */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 16px; /* Padding inside the card */
+    max-width: 300px; /* Max width of the card */
+    margin: 16px; /* Margin around the card */
+    text-align: center; /* Centered text */
+  }
+  
+  .candidate-avatar {
+    width: 100px; /* Avatar width */
+    height: 100px; /* Avatar height */
+    border-radius: 50%; /* Circular avatar */
+    object-fit: cover; /* Cover the area without distortion */
+    margin-bottom: 12px; /* Space below the avatar */
+  }
+  
+  .candidate-name {
+    font-size: 1.5em; /* Larger font size for the name */
+    font-weight: bold; /* Bold name */
+    margin: 8px 0; /* Margin above and below the name */
+  }
+  
+  .candidate-location,
+  .candidate-email,
+  .candidate-company,
+  .candidate-bio {
+    font-size: 1em; /* Standard font size */
+    color: #555555; /* Dark gray text color */
+    margin: 4px 0; /* Margin above and below each text */
+  }
+  
+  .candidate-email {
+    font-style: italic; /* Italicize email */
+  }
+  
+  .candidate-company {
+    font-weight: 600; /* Slightly bolder for company */
+  }
+
+  .candidate-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 12px; /* Space above the buttons */
+  }
+  
+  .add-button, .next-button {
+    width: 40px; /* Width for circular button */
+    height: 40px; /* Height for circular button */
+    border-radius: 50%; /* Make the button circular */
+    border: none; /* No border */
+    color: white; /* White text */
+    font-size: 20px; /* Font size for the symbol */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition */
+  }
+  
+  .add-button {
+    background-color: #28a745; /* Green background for + button */
+  }
+  
+  .next-button {
+    background-color: #dc3545; /* Red background for - button */
+  }
+  
+  .add-button:hover {
+    background-color: #218838; /* Darker green on hover */
+  }
+  
+  .next-button:hover {
+    background-color: #c82333; /* Darker red on hover */
+  }
