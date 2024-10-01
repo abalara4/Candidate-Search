@@ -1,5 +1,5 @@
 import React from 'react';
-import CandidateSearchCard from '../components/candidateSearchCard';
+import CandidateSearchCard from '../components/CandidateSearchCard';
 
 const CandidateSearch: React.FC = () => {
   const user = {

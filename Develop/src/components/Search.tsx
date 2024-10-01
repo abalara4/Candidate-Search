@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import CandidateSearchCard from './candidateSearchCard';
+import CandidateSearchCard from './CandidateSearchCard';
 
 
 const users = [
