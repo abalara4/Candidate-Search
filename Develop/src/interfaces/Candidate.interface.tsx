@@ -2,11 +2,8 @@
 export default interface Candidate {
     id: number;
     name: string;
-    email: string;
-    phone: string;
-    resume: string;
-    job: string;
-    status: string;
-    created_at: string;
-    updated_at: string;
+    location: string;
+    Email: string;
+    Company: string;
+    Bio: string;
 }

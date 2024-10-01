@@ -6,10 +6,10 @@ const Nav = () => {
     <nav>
       <ul>
         <li>
-          <Link to="/CandidateSearch">Candidate Search</Link>
+          <Link to="/">Home</Link>
         </li>
         <li>
-          <Link to="/SavedCandidates">Saved Candidates</Link>
+          <Link to="/SavedCandidates">Potential Candidates</Link>
         </li>
       </ul>
     </nav>
