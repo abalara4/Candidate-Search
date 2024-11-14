@@ -1,6 +1,5 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import CandidateSearchCard from '../components/CandidateSearchCard';
-import { searchGithub } from '../api/API';
 
 const CandidateSearch: React.FC = () => {
   const user = {
@@ -17,17 +16,6 @@ const CandidateSearch: React.FC = () => {
   const onNextUser = () => {
     console.log('Next user');
   }; // Replace with actual function
-
-async function searchUsers () {
-  const users = await searchGithub();
-  console.log(users);
-}
-
-  useEffect(() => {
-    searchUsers();
-    console.log('Running useEffect');
-  }, []);
-
 
   return (
     <div>
