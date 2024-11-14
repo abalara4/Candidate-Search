@@ -1,21 +1,29 @@
-import React from 'react';
+import { useEffect, useState } from 'react';
 import './PotentialCandidates.css';
+import './PotentialCandidates.css';
+import Candidate from '../interfaces/Candidate.interface';
 
-interface User {
-  avatar_url: string;
-  name: string;
-  location: string;
-  email: string;
-  company: string;
-  bio: string;
-}
+const PotentialCandidates = () => {
+  const [candidates, setCandidates] = useState<Candidate[]>([]);
 
-interface PotentialCandidatesProps {
-  candidates: User[]; // Accept candidates as a prop
-  onRemoveCandidate: (index: number) => void;
-}
+  // Save candidates to local storage whenever the candidates array changes
+  useEffect(() => {
+    localStorage.setItem('potentialCandidates', JSON.stringify(candidates));
+  }, [candidates]);
 
-const PotentialCandidates: React.FC<PotentialCandidatesProps> = ({ candidates, onRemoveCandidate }) => {
+  // Load candidates from local storage when the component mounts
+  useEffect(() => {
+    const savedCandidates = localStorage.getItem('potentialCandidates');
+    if (savedCandidates) {
+      setCandidates(JSON.parse(savedCandidates));
+    }
+  }, []);
+
+  function onRemoveCandidate(index: number): void {
+    const updatedCandidates = candidates.filter((_, i) => i !== index);
+    setCandidates(updatedCandidates);
+  }
+
   return (
     <div>
       {candidates.length === 0 ? (
@@ -27,7 +35,6 @@ const PotentialCandidates: React.FC<PotentialCandidatesProps> = ({ candidates, o
               <th>Picture</th>
               <th>Name</th>
               <th>Location</th>
-              <th>Email</th>
               <th>Company</th>
               <th>Bio</th>
               <th>Reject</th>
@@ -45,9 +52,9 @@ const PotentialCandidates: React.FC<PotentialCandidatesProps> = ({ candidates, o
                 </td>
                 <td>{candidate.name}</td>
                 <td>{candidate.location}</td>
-                <td>{candidate.email}</td>
-                <td>{candidate.company}</td>
-                <td>{candidate.bio}</td>
+                <td>{candidate.Email}</td>
+                <td>{candidate.Company}</td>
+                <td>{candidate.Bio}</td>
                 <td>
                   <button onClick={() => onRemoveCandidate(index)} className="reject-button">-</button>
                 </td>
